@@ -3,7 +3,21 @@ import TrafficsLights from './components/TrafficsLights';
 import './App.css';
 
 
-let Secuencia = [];
+let Secuencia = [
+  {
+    color: 'R',
+    duration: '3seg'
+  },
+  {
+    color: 'Y',
+    duration: '6seg'
+  },
+  {
+    color: 'G',
+    duration: '8seg'
+  }
+
+];
 
 
 class App extends Component {
@@ -24,11 +38,8 @@ setLights = (index) => {
   setTimeout(()=> this.setLights(newIndex), newDuration);
 }
 
-async componentDidMount () {
-  const response = await fetch('https://api-pre.americadigital.com.ar/contents/semaphore/random');
-  const data = await response.json();
-  Secuencia = data.data;
-  setTimeout(()=> this.setLights(0), 4000);
+componentDidMount () {
+   setTimeout(()=> this.setLights(0), 4000);
 }
 
   render(){
