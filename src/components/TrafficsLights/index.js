@@ -1,3 +1,3 @@
-import TrafficsLights from './TrafficsLights';
+import TrafficsLights from "./TrafficsLights";
 
 export default TrafficsLights;
